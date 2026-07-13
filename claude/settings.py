@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'books',
     'accounts',
     'loans',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -135,8 +136,9 @@ REST_FRAMEWORK = {
         'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE' : 5,
     'DEFAULT_FILTER_BACKENDS' : [
-        'django_filters.rest_framework.DjangoFilter_backend'
+        'django_filters.rest_framework.DjangoFilterBackend'
     ],
+    
     
 }
 

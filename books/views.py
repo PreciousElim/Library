@@ -5,6 +5,7 @@ from rest_framework import generics, status, permissions
 from .models import Book
 from .serializers import BookSerializer
 from .pagination import BookPagination
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 
@@ -58,14 +59,16 @@ from .pagination import BookPagination
 class BookView(generics.ListCreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     pagination_class = BookPagination
+    filterset_fields = ['author', 'is_available', 'title']
     
     
 class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer    
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     pagination_class = BookPagination
+    filterset_fields = ['author', 'is_available', 'title']
     
     
