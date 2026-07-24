@@ -12,6 +12,6 @@ class Loan(models.Model):
     
     
     def __str__(self):
-        return f"{self.book.title} borrowed by {self.lender.username}"
+        return f"{self.book.title} borrowed by {self.borrower.username}"
     
 # Create your models here.

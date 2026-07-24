@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     'loans',
     'django_filters',
+    'rest_framework_simplejwt.token_blacklist'
 ]
 
 MIDDLEWARE = [

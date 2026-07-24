@@ -65,6 +65,7 @@ class BookView(generics.ListCreateAPIView):
     search_fields = ['author', 'title']
     
     
+       
 class BookDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Book.objects.all()
     serializer_class = BookSerializer    
