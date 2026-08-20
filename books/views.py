@@ -27,13 +27,14 @@ from .pagination import BookPagination
     
 # class BookDetailView(APIView):
 #     permission_classes = [permissions.IsAuthenticated]
+    # books = get_object_or_404(Book, pk=pk) [You can just add on here, instead of adding it everyother function. Adding one will do the job]
 #     def get(self,request,pk):
 #         books = get_object_or_404(Book, pk=pk)
 #         serializer = BookSerializer(books)
 #         return Response(serializer.data, status=status.HTTP_200_OK)   
     
 #     def put(self, request,pk):
-#         books = get_object_or_404(Book, pk=pk)
+#         books = get_object_or_404(Book, pk=pk) Remove this!!!
 #         serializer = BookSerializer(books, data=request.data)
 #         if serializer.is_valid():
 #             serializer.save()
@@ -41,7 +42,7 @@ from .pagination import BookPagination
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
     
 #     def patch(self,request,pk):
-#         books = get_object_or_404(Book, pk=pk)
+#         books = get_object_or_404(Book, pk=pk)Remove this!!!
 #         serializer = BookSerializer(books, data=request.data, partial=True)
 #         if serializer.is_valid():
 #             serializer.save()
@@ -49,7 +50,7 @@ from .pagination import BookPagination
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 #     def delete(self,request,pk):
-#         books = get_object_or_404(Book, pk=pk)
+#         books = get_object_or_404(Book, pk=pk)Remove this!!!
 #         books.delete()
 #         return Response(status=status.HTTP_204_NO_CONTENT)
 
