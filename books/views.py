@@ -14,7 +14,7 @@ from .pagination import BookPagination
 #     def get(self,request):
 #         books = Book.objects.all()
 #         serializer = BookSerializer(books, many=True)
-#         return Response(serializer.data)
+#         return Response(serializer.data, status=status.HTTP_200_OK)
     
     
 #     def post(self,request):
@@ -30,14 +30,14 @@ from .pagination import BookPagination
 #     def get(self,request,pk):
 #         books = get_object_or_404(Book, pk=pk)
 #         serializer = BookSerializer(books)
-#         return Response(serializer.data)   
+#         return Response(serializer.data, status=status.HTTP_200_OK)   
     
 #     def put(self, request,pk):
 #         books = get_object_or_404(Book, pk=pk)
 #         serializer = BookSerializer(books, data=request.data)
 #         if serializer.is_valid():
 #             serializer.save()
-#             return Response(serializer.data)
+#             return Response(serializer.data, status=status.HTTP_200_OK)
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
     
 #     def patch(self,request,pk):
@@ -45,7 +45,7 @@ from .pagination import BookPagination
 #         serializer = BookSerializer(books, data=request.data, partial=True)
 #         if serializer.is_valid():
 #             serializer.save()
-#             return Response(serializer.data)
+#             return Response(serializer.data, status=status.HTTP_200_OK)
 #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 #     def delete(self,request,pk):
